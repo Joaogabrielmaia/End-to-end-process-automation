@@ -10,3 +10,4 @@ playwright-report/
 .n8n-data/
 .tmp/
 tsconfig.tsbuildinfo
+.vitest/
