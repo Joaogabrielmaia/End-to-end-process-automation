@@ -1,0 +1,56 @@
+# Tudo roda local. Nenhum serviço aqui é pensado para hospedagem.
+services:
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: fluxo
+      POSTGRES_PASSWORD: fluxo_local
+      POSTGRES_DB: fluxo
+    ports:
+      - "5436:5432"
+    volumes:
+      - fluxo_db:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U fluxo -d fluxo"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  n8n:
+    image: n8nio/n8n:latest
+    ports:
+      - "5678:5678"
+    environment:
+      GENERIC_TIMEZONE: America/Sao_Paulo
+      TZ: America/Sao_Paulo
+      N8N_DIAGNOSTICS_ENABLED: "false"
+      N8N_PERSONALIZATION_ENABLED: "false"
+      N8N_SECURE_COOKIE: "false"
+      # Os fluxos leem a URL e a chave do app por variáveis de ambiente
+      N8N_BLOCK_ENV_ACCESS_IN_NODE: "false"
+      FLUXO_APP_URL: http://host.docker.internal:3100
+      FLUXO_API_KEY: chave-local-de-exemplo
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    volumes:
+      - fluxo_n8n:/home/node/.n8n
+      - ./automations:/automations:ro
+
+  # Perfil opcional: o painel em contêiner. Em desenvolvimento eu rodo "npm run dev" no host.
+  app:
+    profiles: ["app"]
+    build: .
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      DATABASE_URL: postgresql://fluxo:fluxo_local@db:5432/fluxo?schema=public
+      INBOUND_API_KEY: chave-local-de-exemplo
+      EXTRACTION_PROVIDER: rules
+      NOTIFIER: simulated
+    ports:
+      - "3100:3100"
+
+volumes:
+  fluxo_db:
+  fluxo_n8n:
