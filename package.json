@@ -2,6 +2,7 @@
   "name": "fluxo-automacao-pedidos",
   "version": "1.0.0",
   "private": true,
+  "prisma": { "seed": "tsx prisma/seed.ts" },
   "description": "Fluxo: automação de pedidos por e-mail da Distribuidora Santa Clara (estudo de caso fictício)",
   "license": "MIT",
   "scripts": {

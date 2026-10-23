@@ -1,0 +1,164 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum MessageStatus {
+  RECEIVED
+  PROCESSED
+  FAILED
+}
+
+enum OrderStatus {
+  EXCEPTION
+  REGISTERED
+}
+
+enum ExceptionStatus {
+  OPEN
+  RESOLVED
+}
+
+enum ExceptionCode {
+  CUSTOMER_NOT_FOUND
+  EMPTY_ORDER
+  UNKNOWN_SKU
+  INVALID_QUANTITY
+  OUT_OF_STOCK
+  CREDIT_LIMIT_EXCEEDED
+  HIGH_VALUE_APPROVAL
+  INVALID_DEADLINE
+  LOW_CONFIDENCE
+  PROCESSING_FAILED
+}
+
+enum Actor {
+  AUTOMATION
+  USER
+}
+
+model Customer {
+  id          String   @id @default(cuid())
+  cnpj        String   @unique
+  name        String
+  email       String   @unique
+  phone       String
+  creditLimit Decimal  @db.Decimal(12, 2)
+  creditUsed  Decimal  @db.Decimal(12, 2)
+  active      Boolean  @default(true)
+  orders      Order[]
+}
+
+model Product {
+  sku     String   @id
+  name    String
+  aliases String[]
+  unit    String
+  price   Decimal  @db.Decimal(10, 2)
+  stock   Int
+  active  Boolean  @default(true)
+}
+
+model InboundMessage {
+  id               String        @id @default(cuid())
+  messageId        String        @unique
+  contentHash      String
+  fromEmail        String
+  subject          String
+  body             String
+  attachmentName   String?
+  attachmentBase64 String?
+  receivedAt       DateTime
+  createdAt        DateTime      @default(now())
+  status           MessageStatus @default(RECEIVED)
+  attempts         Int           @default(0)
+  lastError        String?
+  duplicateCount   Int           @default(0)
+  order            Order?
+  events           AuditEvent[]
+
+  @@index([contentHash, createdAt])
+}
+
+model Order {
+  id              String          @id @default(cuid())
+  number          Int             @unique @default(autoincrement())
+  message         InboundMessage  @relation(fields: [messageId], references: [id])
+  messageId       String          @unique
+  customer        Customer?       @relation(fields: [customerId], references: [id])
+  customerId      String?
+  status          OrderStatus
+  deadline        DateTime?       @db.Date
+  deadlineAssumed Boolean         @default(false)
+  total           Decimal         @db.Decimal(12, 2)
+  confidence      Float
+  provider        String
+  receivedAt      DateTime
+  registeredAt    DateTime?
+  reviewed        Boolean         @default(false)
+  draft           Json
+  approvals       Json            @default("{}")
+  items           OrderItem[]
+  exception       ExceptionCase?
+  events          AuditEvent[]
+  notifications   Notification[]
+
+  @@index([status])
+  @@index([customerId])
+}
+
+model OrderItem {
+  id          String  @id @default(cuid())
+  order       Order   @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  orderId     String
+  sku         String?
+  description String
+  quantity    Int?
+  unitPrice   Decimal? @db.Decimal(10, 2)
+  lineTotal   Decimal? @db.Decimal(12, 2)
+}
+
+model ExceptionCase {
+  id          String          @id @default(cuid())
+  order       Order           @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  orderId     String          @unique
+  status      ExceptionStatus @default(OPEN)
+  primary     ExceptionCode
+  issues      Json
+  createdAt   DateTime        @default(now())
+  resolvedAt  DateTime?
+  resolution  String?
+
+  @@index([status, createdAt])
+}
+
+model AuditEvent {
+  id               String          @id @default(cuid())
+  at               DateTime        @default(now())
+  actor            Actor
+  actorName        String?
+  type             String
+  message          String
+  data             Json?
+  order            Order?          @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  orderId          String?
+  inboundMessage   InboundMessage? @relation(fields: [inboundMessageId], references: [id], onDelete: Cascade)
+  inboundMessageId String?
+
+  @@index([orderId, at])
+}
+
+model Notification {
+  id        String   @id @default(cuid())
+  at        DateTime @default(now())
+  channel   String
+  recipient String
+  subject   String
+  body      String
+  order     Order?   @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  orderId   String?
+}
