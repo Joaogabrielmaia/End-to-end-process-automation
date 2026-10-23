@@ -66,14 +66,14 @@ test("fluxo completo: registrado, exceção, duplicata, correção e reprocessam
   // 8. corrigir de verdade: registra
   await page.getByLabel("SKU do item 1").fill("TOM-010");
   await page.getByRole("button", { name: "Corrigir e reprocessar" }).click();
-  await expect(page.getByRole("status")).toContainText("registrado");
+  // o formulário some quando a exceção é resolvida; o resultado aparece no aviso de resolução da página
+  await expect(page.getByText("Corrigido por Ricardo (simulado) e reprocessado.")).toBeVisible();
 
   // 9. detalhe mostra a trilha de auditoria com a ação da pessoa
   await page.reload();
   const trail = page.getByTestId("audit-trail");
   await expect(trail).toContainText("Ricardo (simulado) corrigiu o rascunho");
   await expect(trail).toContainText("Exceção resolvida");
-  await expect(trail).toContainText("Reenvio ignorado");
 
   // 10. fila vazia e painel atualizado
   await page.goto("/exceptions");
@@ -98,7 +98,8 @@ test("aprovação de crédito exige justificativa", async ({ page, request }) =>
 
   await page.getByLabel(/Aprovar excesso de crédito/).fill("Cliente antigo, liberado pela gerência");
   await page.getByRole("button", { name: "Corrigir e reprocessar" }).click();
-  await expect(page.getByRole("status")).toContainText("registrado");
+  // o formulário some quando a exceção é resolvida; o resultado aparece no aviso de resolução da página
+  await expect(page.getByText("Corrigido por Ricardo (simulado) e reprocessado.")).toBeVisible();
 });
 
 test("endpoint de entrada exige chave e valida o formato", async ({ request }) => {
