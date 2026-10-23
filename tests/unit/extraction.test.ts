@@ -22,6 +22,16 @@ describe("RulesExtractionProvider (RF-03)", () => {
     expect(d.format).toBe("text");
   });
 
+  it("regressão: saudação na mesma linha do pedido não descarta a linha (achado ao testar via curl)", async () => {
+    const d = await run("Bom dia, preciso de 20 disjuntor 20A, 5 rolos de cabo 2,5mm e 10 tomadas 20A. Prazo: 30/10/2026");
+    expect(d.items.map((i) => [i.sku, i.quantity])).toEqual([
+      ["DJM-020", 20],
+      ["CAB-025", 5],
+      ["TOM-020", 10],
+    ]);
+    expect(d.deadline).toBe("2026-10-30");
+  });
+
   it("extrai tabela em markdown com SKU e alta confiança", async () => {
     const d = await run("| SKU | Descrição | Qtd |\n|---|---|---|\n| DJM-025 | Disjuntor | 12 |\n| INT-001 | Interruptor simples | 30 |");
     expect(d.format).toBe("table");

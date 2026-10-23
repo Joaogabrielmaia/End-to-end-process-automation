@@ -73,7 +73,7 @@ export type Approvals = z.infer<typeof approvalsSchema>;
 
 export const correctionSchema = z.object({
   customerCnpj: z.string().nullable().optional(),
-  items: z.array(z.object({ sku: z.string().min(1), quantity: z.number() })).optional(),
+  items: z.array(z.object({ sku: z.string().min(1).max(30), quantity: z.number().finite().max(1_000_000) })).optional(),
   deadline: z.string().nullable().optional(),
   approvals: z
     .object({

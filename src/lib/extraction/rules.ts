@@ -6,6 +6,7 @@ const SKU_RE = /\b([a-z]{2,3}-\d{3})\b/i;
 const CNPJ_RE = /\b\d{2}\.\d{3}\.\d{3}\/\d{4}-\d{2}\b/;
 const NOISE_LINE_RE =
   /^(de|para|assunto|enviado|date|data|att|atenciosamente|abraco|abracos|obrigad|grato|bom dia|boa tarde|boa noite|ola|oi|prezados?|cnpj|cliente|empresa|prazo|entrega|ref|pedido de compra|tel|fone|endereco|obs)\b/;
+const GREETING_PREFIX_RE = /^\s*(?:bom dia|boa tarde|boa noite|ol[aá]|oi|prezados?)(?:,?\s*tudo bem\??)?[\s,.!:;-]*/i;
 const VAGUE_RE = /\b(de sempre|mesmo pedido|igual (a|ao|da|do)|aquele pedido|o mesmo)\b/;
 const APPROX_RE = /\b(uns|umas|mais ou menos|cerca de|aproximadamente|por volta de)\s+\d/;
 
@@ -113,7 +114,8 @@ export class RulesExtractionProvider implements ExtractionProvider {
     let aggregatedConfidence = 0.9;
 
     for (const rawLine of full.split(/\r?\n/)) {
-      const line = rawLine.trim();
+      // Saudação na mesma linha do pedido ("Bom dia, preciso de ...") não pode descartar a linha toda.
+      const line = rawLine.replace(GREETING_PREFIX_RE, "").trim();
       if (!line) continue;
 
       const tableItem = parseTableLine(line);

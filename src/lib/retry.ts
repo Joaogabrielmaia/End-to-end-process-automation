@@ -13,7 +13,8 @@ export function isTransient(err: unknown): boolean {
   const code = (err as { code?: string } | null)?.code;
   if (code && TRANSIENT_PRISMA_CODES.has(code)) return true;
   const msg = err instanceof Error ? err.message : String(err);
-  return /ECONNRESET|ETIMEDOUT|ECONNREFUSED|Connection terminated/i.test(msg);
+  // 40P01 = deadlock detectado pelo Postgres; 40001 = falha de serialização. Ambos valem uma nova tentativa.
+  return /ECONNRESET|ETIMEDOUT|ECONNREFUSED|Connection terminated|deadlock detected|40P01|40001/i.test(msg);
 }
 
 export interface RetryOptions {

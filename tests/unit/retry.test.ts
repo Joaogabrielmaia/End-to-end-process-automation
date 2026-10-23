@@ -36,6 +36,16 @@ describe("withRetry (RN-12)", () => {
     expect(calls).toBe(3);
   });
 
+  it("trata deadlock do Postgres (40P01) como transitório (achado no teste de carga)", async () => {
+    let calls = 0;
+    const r = await withRetry(async () => {
+      if (++calls < 2) throw new Error('PostgresError { code: "40P01", message: "deadlock detected" }');
+      return "ok";
+    }, base);
+    expect(r).toBe("ok");
+    expect(calls).toBe(2);
+  });
+
   it("espera de forma exponencial", async () => {
     const delays: number[] = [];
     const sleep = async (ms: number) => {

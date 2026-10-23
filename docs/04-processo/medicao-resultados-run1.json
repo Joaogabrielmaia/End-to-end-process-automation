@@ -1,0 +1,86 @@
+{
+  "generatedAt": "2026-10-23T16:45:51.775Z",
+  "messages": 500,
+  "seed": 42,
+  "concurrency": 8,
+  "elapsedMs": 10877,
+  "throughputPerSec": 45.9691314340396,
+  "requestLatencyMs": {
+    "avg": 173.2081632,
+    "p50": 95.4366,
+    "p95": 1010.0449999999992,
+    "max": 2114.5146999999997
+  },
+  "outcomes": {
+    "REGISTERED": 325,
+    "OUT_OF_STOCK": 22,
+    "EMPTY_ORDER": 6,
+    "UNKNOWN_SKU": 38,
+    "CREDIT_LIMIT_EXCEEDED": 15,
+    "LOW_CONFIDENCE": 8,
+    "HIGH_VALUE_APPROVAL": 18,
+    "INVALID_DEADLINE": 6,
+    "PROCESSING_FAILED": 5,
+    "CUSTOMER_NOT_FOUND": 16,
+    "DUPLICATE": 41
+  },
+  "expectedAgreement": {
+    "matched": 491,
+    "total": 500
+  },
+  "mismatches": [
+    {
+      "scenario": "clean-pdf",
+      "expected": "REGISTERED",
+      "actual": "PROCESSING_FAILED"
+    },
+    {
+      "scenario": "clean-text",
+      "expected": "REGISTERED",
+      "actual": "UNKNOWN_SKU"
+    },
+    {
+      "scenario": "clean-text",
+      "expected": "REGISTERED",
+      "actual": "UNKNOWN_SKU"
+    },
+    {
+      "scenario": "clean-table",
+      "expected": "REGISTERED",
+      "actual": "PROCESSING_FAILED"
+    },
+    {
+      "scenario": "past-deadline",
+      "expected": "INVALID_DEADLINE",
+      "actual": "UNKNOWN_SKU"
+    },
+    {
+      "scenario": "clean-table",
+      "expected": "REGISTERED",
+      "actual": "PROCESSING_FAILED"
+    },
+    {
+      "scenario": "clean-table",
+      "expected": "REGISTERED",
+      "actual": "PROCESSING_FAILED"
+    },
+    {
+      "scenario": "clean-text",
+      "expected": "REGISTERED",
+      "actual": "UNKNOWN_SKU"
+    },
+    {
+      "scenario": "clean-text",
+      "expected": "REGISTERED",
+      "actual": "PROCESSING_FAILED"
+    }
+  ],
+  "db": {
+    "totalOrders": 459,
+    "reviewedOrders": 134,
+    "reviewRate": 0.29193899782135074,
+    "autoAvgMs": 45.81230769230769,
+    "autoP50Ms": 44,
+    "autoP95Ms": 63
+  }
+}

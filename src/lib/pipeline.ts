@@ -300,7 +300,9 @@ async function registerOrder(a: EvalArgs, r: ValidationResult): Promise<IngestRe
 
   const order = await prisma.$transaction(async (tx) => {
     // RN-11: reserva de estoque e consumo de crédito na mesma transação do registro.
-    for (const [sku, qty] of qtyBySku) {
+    // Ordem estável de SKUs: duas transações que disputam os mesmos produtos travam na mesma sequência
+    // e não entram em deadlock (achado no teste de carga, ver relatório de medição).
+    for (const [sku, qty] of [...qtyBySku].sort(([a], [b]) => a.localeCompare(b))) {
       const res = await tx.product.updateMany({ where: { sku, stock: { gte: qty } }, data: { stock: { decrement: qty } } });
       if (res.count === 0) throw new RaceError(`estoque de ${sku}`);
     }

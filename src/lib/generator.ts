@@ -111,7 +111,7 @@ function pickLines(rng: Rng, n: number): Line[] {
 
 function textLine(rng: Rng, l: Line): string {
   const alias = l.product.aliases[0] ?? l.product.name.toLowerCase();
-  const plural = rng.chance(0.3) && /^[a-zà-ú ]+$/i.test(alias) ? `${alias}s` : alias;
+  const plural = rng.chance(0.3) && /^[a-zà-ú ]+$/i.test(alias) && !alias.endsWith("s") ? `${alias}s` : alias;
   const unit = l.product.unit === "rolo" ? (l.qty > 1 ? "rolos de " : "rolo de ") : "";
   switch (rng.int(0, 3)) {
     case 0:

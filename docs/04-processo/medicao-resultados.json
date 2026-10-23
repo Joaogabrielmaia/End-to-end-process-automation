@@ -1,0 +1,39 @@
+{
+  "generatedAt": "2026-10-23T16:47:04.220Z",
+  "messages": 500,
+  "seed": 42,
+  "concurrency": 8,
+  "elapsedMs": 6351,
+  "throughputPerSec": 78.72469396680555,
+  "requestLatencyMs": {
+    "avg": 100.72909020000003,
+    "p50": 95.3730999999998,
+    "p95": 152.0644999999995,
+    "max": 323.5
+  },
+  "outcomes": {
+    "REGISTERED": 333,
+    "OUT_OF_STOCK": 22,
+    "EMPTY_ORDER": 6,
+    "UNKNOWN_SKU": 34,
+    "CREDIT_LIMIT_EXCEEDED": 15,
+    "LOW_CONFIDENCE": 8,
+    "HIGH_VALUE_APPROVAL": 18,
+    "INVALID_DEADLINE": 7,
+    "CUSTOMER_NOT_FOUND": 16,
+    "DUPLICATE": 41
+  },
+  "expectedAgreement": {
+    "matched": 500,
+    "total": 500
+  },
+  "mismatches": [],
+  "db": {
+    "totalOrders": 459,
+    "reviewedOrders": 126,
+    "reviewRate": 0.27450980392156865,
+    "autoAvgMs": 47.4954954954955,
+    "autoP50Ms": 44,
+    "autoP95Ms": 64.79999999999995
+  }
+}
