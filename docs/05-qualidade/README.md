@@ -4,6 +4,8 @@ O registro de 23/10/2026 reúne typecheck sem erros, 76 testes unitários e de i
 
 Os três logs abaixo foram gerados depois, na revalidação do commit `0afe5f7`, e confirmam os números de typecheck, testes e E2E com saída gravada. O registro de 23/10 continua como estava; os logs não o substituem.
 
+O `Dockerfile` usa Node 22; os logs abaixo foram gerados com Node 24.14.0.
+
 | Documento | O que contém | Itens |
 |---|---|---|
 | [Resultados de testes](01-resultados-de-testes.md) | Resumo por camada, n8n, carga e o que não foi verificado | 5 camadas, 5 itens não verificados |

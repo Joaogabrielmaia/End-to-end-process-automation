@@ -52,6 +52,10 @@ Dados de demonstração gerados pelo gerador do produto. Galeria completa em [`d
 </tr>
 </table>
 
+![Demonstração: o gerador cria um lote, um pedido com SKU inexistente cai na fila de exceções, o SKU é corrigido e o pedido é registrado](docs/screenshots/demo-excecao.gif)
+
+Demonstração real, 16 s: o gerador cria um lote, um pedido com item inexistente vai para a fila de exceções, o SKU é corrigido e o pedido é registrado.
+
 ## O problema
 
 No pico da manhã, de 3 a 5 e-mails de pedido chegam por minuto em alguns intervalos. Cada um é lido, o cliente e os códigos são procurados em planilhas, estoque e crédito são conferidos em outras duas, e o pedido é digitado. O assistente de vendas simulado estima 8 minutos por pedido ([AS-IS](docs/01-discovery/06-processo-atual-as-is.md)).

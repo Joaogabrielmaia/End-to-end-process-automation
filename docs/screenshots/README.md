@@ -4,7 +4,9 @@ Capturas do app rodando local, em 1280 px de largura, na ordem do fluxo. Os dado
 
 Para refazer as imagens: `npm run build`, `npm run start` e `npm run screenshots` (script em [`scripts/screenshots.spec.ts`](../../scripts/screenshots.spec.ts)).
 
-Não há captura do canvas do n8n nem do Power BI.
+Não há captura do Power BI: não existe relatório.
+
+O GIF [`demo-excecao.gif`](demo-excecao.gif) (16 s) mostra um fluxo real: o lote é gerado pelo gerador, um pedido com SKU inexistente cai na fila de exceções, o SKU é corrigido e o pedido é reprocessado e registrado. Gravado com Playwright e convertido com ffmpeg, sem edição.
 
 | # | Tela | O que se vê · por que importa |
 |---|---|---|
@@ -18,6 +20,7 @@ Não há captura do canvas do n8n nem do Power BI.
 | 8 | Cadastros | Tabela de clientes fictícios com limite de crédito, valor usado e situação. · Estoque e crédito representam a exportação diária do ERP, que aqui é premissa (RF-13). |
 | 9 | Medição | Os resultados da carga de 500 mensagens (500 de 500, 6,4 s, mediana de 95 ms, revisão de 27,5%), os desfechos e a estimativa de ganho com as entradas. · A tela lê o mesmo arquivo do [relatório de medição](../04-processo/relatorio-de-medicao.md). |
 | 10 | Notificações | Lista do canal simulado, com os canais `#pedidos` e `#fila-de-excecoes`. · O canal grava em tabela e não prova entrega real (ADR-007). |
+| 11 | Canvas do fluxo no n8n | O fluxo "Fluxo - Recebimento de pedidos" no n8n 2.44.6: caixa de entrada simulada, montagem da mensagem, envio ao Fluxo com retentativa x3, os desvios de reenvio, registrado e exceção, e o ramo de alerta em caso de falha. · É a orquestração descrita no [ADR-001](../03-arquitetura/ADRs.md#adr-001--n8n-ou-código-puro) e no [passo a passo do n8n](../04-processo/n8n-como-rodar.md). |
 
 ## Imagens
 
@@ -42,4 +45,9 @@ Não há captura do canvas do n8n nem do Power BI.
 <td><img src="09-medicao.png" width="380" alt="Relatório de medição com os resultados da carga de 500 mensagens e a estimativa de ganho"></td>
 <td><img src="10-notificacoes.png" width="380" alt="Lista de notificações do canal simulado, com os canais de pedidos e da fila de exceções"></td>
 </tr>
+<tr>
+<td colspan="2"><img src="11-n8n-canvas.png" width="780" alt="Canvas do n8n com o fluxo de recebimento de pedidos: webhook, montagem da mensagem, envio ao Fluxo, desvios de reenvio, registrado e exceção, e o alerta de falha"></td>
+</tr>
 </table>
+
+![Demonstração: geração de lote, pedido na fila de exceções, correção do SKU e pedido registrado](demo-excecao.gif)
