@@ -1,6 +1,6 @@
 # 07 · Processo futuro (TO-BE), lado a lado com o AS-IS, e hipóteses de ganho
 
-> Simulação: o Claude interpretou o cliente nesta conversa.
+> Reunião simulada; pessoas e empresa fictícias.
 > Os números abaixo são **hipóteses** com entradas visíveis. Medições reais do sistema estão no [relatório de medição](../04-processo/relatorio-de-medicao.md).
 
 ## AS-IS e TO-BE lado a lado
@@ -38,7 +38,7 @@ valor_estimado_por_mês  = horas_liberadas_por_mês × custo_da_hora
 | Dias úteis por mês | 22 | Premissa minha |
 | Volume por mês | 1.760 pedidos (80 × 22) | Cálculo |
 | Minutos manual por pedido | 8,0 | Estimativa de Ricardo (simulado) |
-| Taxa de revisão | 10% / **20%** / 35% | Cenários meus; Marlene "chuta" 1 em cada 5 |
+| Taxa de revisão | 10% / **20%** / 35% | Cenários meus; o 20% é hipótese do autor (não consta nas atas) |
 | Minutos por exceção | 4,0 | Premissa minha (abrir, decidir, corrigir) |
 | Custo da hora | R$ 38,00 | Premissa minha, custo total de um assistente |
 

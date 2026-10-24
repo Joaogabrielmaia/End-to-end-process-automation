@@ -1,6 +1,6 @@
 # 06 · Processo atual (AS-IS), gargalos e método de medição
 
-> Simulação: o Claude interpretou o cliente nesta conversa.
+> Reunião simulada; pessoas e empresa fictícias.
 > Os tempos abaixo são **estimativas dadas por Ricardo Teixeira** (personagem simulado) na reunião 2. Não são medições. O método para medir de verdade está no fim deste documento.
 
 ## Diagrama AS-IS

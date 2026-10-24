@@ -18,9 +18,7 @@
     "db:migrate": "prisma migrate deploy",
     "db:seed": "tsx prisma/seed.ts",
     "db:reset": "prisma migrate reset --force",
-    "orders:generate": "tsx scripts/generate-orders.ts",
     "load": "tsx tests/load/load.ts",
-    "export:csv": "tsx scripts/export-csv.ts",
     "screenshots": "playwright test --config playwright.screens.config.ts"
   },
   "dependencies": {

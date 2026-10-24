@@ -1,6 +1,6 @@
-# 03 · Reunião 1 — Gerente comercial
+# 03 · Reunião 1 · Gerente comercial
 
-> Simulação: o Claude interpretou o cliente nesta conversa.
+> Reunião simulada; pessoas e empresa fictícias.
 
 - **Participantes (fictícios):** Marlene Albuquerque (gerente comercial da Distribuidora Santa Clara) e eu (João).
 - **Objetivo:** entender o que ela espera da automação e quais regras são dela.
