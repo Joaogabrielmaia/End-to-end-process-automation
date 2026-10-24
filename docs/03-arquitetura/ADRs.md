@@ -15,7 +15,7 @@ Formato de cada decisão: **contexto → alternativas → escolha → motivo →
 
 **Escolha:** 3, híbrido.
 
-**Motivo:** regras (RN-02 a RN-09) precisam de teste unitário, versionamento em diff legível e tipos. Em n8n elas viram JSON de nós difíceis de revisar. Já a orquestração (gatilho, retentativa, roteamento por resultado, agendamento do alerta de exceção parada) é onde o n8n brilha e é fácil de mostrar em print.
+**Motivo:** regras (RN-02 a RN-09) precisam de teste unitário, versionamento em diff legível e tipos. Em n8n elas viram JSON de nós difíceis de revisar. Já a orquestração (gatilho, retentativa, roteamento por resultado, agendamento do alerta de exceção parada) é onde o n8n se encaixa.
 
 **Trade-off:** duas peças para operar, e o pipeline também roda sem o n8n (o endpoint `/api/inbound` faz tudo). Isso significa que o n8n não é um requisito para o sistema funcionar; ele adiciona recebimento com retentativa, alerta e roteamento. Eu aceito essa duplicidade de "entrada" porque ela permite testar tudo sem o n8n.
 
