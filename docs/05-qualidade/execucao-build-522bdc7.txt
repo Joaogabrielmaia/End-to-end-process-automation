@@ -1,0 +1,47 @@
+# build
+# data: 2026-10-24T13:20:24Z
+# commit: 522bdc7769a32c469982154872bd4961f374a51c
+# node: v24.14.0
+# comando: npm run build
+
+   - Environments: .env
+
+   Creating an optimized production build ...
+ ✓ Compiled successfully in 4.7s
+   Linting and checking validity of types ...
+   Collecting page data ...
+   Generating static pages (0/4) ...
+   Generating static pages (1/4) 
+   Generating static pages (2/4) 
+   Generating static pages (3/4) 
+ ✓ Generating static pages (4/4)
+   Finalizing page optimization ...
+   Collecting build traces ...
+
+Route (app)                                 Size  First Load JS
+┌ ƒ /                                      171 B         106 kB
+├ ○ /_not-found                            993 B         104 kB
+├ ƒ /api/export/[name]                     145 B         103 kB
+├ ƒ /api/generator                         145 B         103 kB
+├ ƒ /api/health                            145 B         103 kB
+├ ƒ /api/inbound                           145 B         103 kB
+├ ƒ /api/metrics                           145 B         103 kB
+├ ƒ /api/notify                            145 B         103 kB
+├ ƒ /api/orders/[id]/reprocess             145 B         103 kB
+├ ƒ /catalog                               145 B         103 kB
+├ ƒ /exceptions                            171 B         106 kB
+├ ○ /generator                           1.13 kB         104 kB
+├ ƒ /measurement                           145 B         103 kB
+├ ƒ /notifications                         171 B         106 kB
+├ ƒ /orders                                171 B         106 kB
+└ ƒ /orders/[id]                         1.82 kB         108 kB
++ First Load JS shared by all             103 kB
+  ├ chunks/255-b1e2483a7e02feee.js       46.6 kB
+  ├ chunks/4bd1b696-c023c6e3521b1417.js  54.2 kB
+  └ other shared chunks (total)          1.99 kB
+
+
+○  (Static)   prerendered as static content
+ƒ  (Dynamic)  server-rendered on demand
+
+exit: 0

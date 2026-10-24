@@ -18,7 +18,7 @@ Pedidos recebidos por e-mail viram registros validados ou exceções explicadas:
 | Stack | Next.js, TypeScript, Prisma, PostgreSQL, n8n 2.44.6, Docker Compose |
 | Extração | Por regras; LLM opcional atrás de `ExtractionProvider`, não executado |
 | Notificação | Simulada (adaptador de webhook disponível) |
-| Testes | typecheck sem erros; 76 de 76 unitários e de integração; 5 de 5 E2E (24/10/2026, commit `0afe5f7`, [logs](docs/05-qualidade/README.md)) |
+| Testes | lint, typecheck e build sem erros; 76 de 76 unitários e de integração; 5 de 5 E2E (24/10/2026, commit `522bdc7`, [logs](docs/05-qualidade/README.md)) |
 | Execução | Local; não hospedado |
 
 Termos e siglas: [glossário](docs/GLOSSARIO.md).
@@ -136,7 +136,7 @@ Execuções reais, registradas em arquivo:
 
 - **Carga de 500 mensagens** (23/10/2026, semente 42, concorrência 8): 500 de 500 com a decisão esperada, p95 de 152,1 ms, 41 duplicadas barradas, taxa de revisão de 27,5% ([dados](docs/04-processo/medicao-resultados.json)).
 - **Deadlock:** a primeira execução acertou 491 de 500, com 5 pedidos em `PROCESSING_FAILED`; a correção está no commit `2f2ef7b` ([primeira execução](docs/04-processo/medicao-resultados-run1.json)).
-- **Testes** (24/10/2026, commit `0afe5f7`): 76 de 76 unitários e de integração, 5 de 5 E2E ([typecheck](docs/05-qualidade/execucao-typecheck-0afe5f7.txt), [testes](docs/05-qualidade/execucao-test-0afe5f7.txt), [E2E](docs/05-qualidade/execucao-test-e2e-0afe5f7.txt)).
+- **Testes** (24/10/2026, commit `522bdc7`): lint, typecheck e build sem erros, 76 de 76 unitários e de integração, 5 de 5 E2E ([lint](docs/05-qualidade/execucao-lint-522bdc7.txt), [typecheck](docs/05-qualidade/execucao-typecheck-522bdc7.txt), [build](docs/05-qualidade/execucao-build-522bdc7.txt), [testes](docs/05-qualidade/execucao-test-522bdc7.txt), [E2E](docs/05-qualidade/execucao-test-e2e-522bdc7.txt)).
 - **n8n 2.44.6:** 3 cenários observados (pedido registrado, reenvio ignorado, alerta após 3 tentativas), em [resultados de testes](docs/05-qualidade/01-resultados-de-testes.md).
 
 **Ganho de tempo, só como estimativa:** no cenário base (80 pedidos por dia, 22 dias úteis, 8 min manuais, 20% de revisão, 4 min por exceção), a conta dá 211,2 horas liberadas por mês. É hipótese com fórmula e entradas visíveis no [relatório de medição](docs/04-processo/relatorio-de-medicao.md), não resultado medido.
