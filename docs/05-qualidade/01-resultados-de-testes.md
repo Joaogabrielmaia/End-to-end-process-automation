@@ -52,7 +52,7 @@ Fonte: `docs/04-processo/medicao-resultados.json` (execução final) e `medicao-
 | Processamento automático, p95 (banco) | 63 ms | 64,8 ms |
 | Taxa de revisão | 29,2% | 27,5% |
 
-A execução 1 expôs um defeito real: sob concorrência 8, transações travavam uma à outra (deadlock) e 5 pedidos limpos terminaram em `PROCESSING_FAILED`. A correção foi uma ordem estável de bloqueios e tratar deadlock como falha transitória com retentativa (RN-11, RN-12), no commit `2f2ef7b`. Mantive a execução 1 no repositório de propósito.
+A execução 1 expôs um defeito real: sob concorrência 8, transações travavam uma à outra (deadlock) e 5 pedidos limpos terminaram em `PROCESSING_FAILED`. A correção foi uma ordem estável de bloqueios e tratar deadlock como falha transitória com retentativa (RN-11, RN-12), no commit `2f2ef7b`. Das 9 divergências da execução 1, as 5 do deadlock foram tratadas assim; as outras 4 vieram de um defeito do extrator corrigido no mesmo commit (detalhes no [relatório de medição](../04-processo/relatorio-de-medicao.md)). Mantive a execução 1 no repositório de propósito.
 
 A taxa de revisão de 27,5% **não** é uma previsão para uma operação real: ela vem do gerador, cuja mistura de cenários (pedidos com erro, duplicatas, estoque curto) eu defini. Ela mede o comportamento do sistema contra essa mistura.
 

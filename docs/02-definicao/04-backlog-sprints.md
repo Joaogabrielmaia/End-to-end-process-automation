@@ -1,6 +1,6 @@
 # 04 · Backlog em 3 sprints
 
-Sprints são agrupamentos lógicos; este repositório não tem revisões por sprint nem tag.
+Sprints são agrupamentos lógicos. O plano das seis sprints do cenário, com objetivos, critérios de conclusão, revisões e retrospectivas, está em [`../ciclo-de-vida/sprints`](../ciclo-de-vida/sprints/README.md); esses registros foram elaborados a partir das evidências do repositório, não existem atas contemporâneas, e o repositório não tem tag.
 
 | Sprint | Meta | Histórias | Entrega verificável |
 |---|---|---|---|
