@@ -16,6 +16,8 @@ Guia da documentação do Fluxo, em seis episódios mais um episódio de abertur
 
 Galeria de telas: [`screenshots/README.md`](screenshots/README.md).
 
+Visão de ciclo de vida, do discovery à evolução, com sprints, reuniões, rastreabilidade, arquitetura, dados, testes, implantação e roadmap: [`ciclo-de-vida/README.md`](ciclo-de-vida/README.md).
+
 ## Trilhas de leitura
 
 ### Em 2 minutos

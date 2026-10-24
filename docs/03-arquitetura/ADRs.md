@@ -63,6 +63,8 @@ Formato de cada decisão: **contexto → alternativas → escolha → motivo →
 
 **Quando eu mudaria:** com EDI ou número de pedido do cliente, eu usaria esse número como chave de idempotência.
 
+**Nota de revisão (24/10/2026):** o código de `src/lib/pipeline.ts` calcula o hash com remetente, assunto e corpo normalizados e o anexo, sem o `Date` do e-mail, e compara com as mensagens das últimas 24 horas. A mitigação citada acima (hash com `Date`) não corresponde à implementação; na prática, o mesmo texto reenviado dentro de 24 horas é tratado como duplicata, e o registro `DUPLICATE` fica visível na auditoria.
+
 ---
 
 ## ADR-004 · Extração por regra ou por LLM

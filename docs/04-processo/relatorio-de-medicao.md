@@ -18,6 +18,8 @@ Fonte: `npm run load` com 500 mensagens do gerador (semente 42, concorrência 8)
 
 **O que a execução 1 mostrou.** Com 8 requisições simultâneas, transações travavam umas às outras e 5 pedidos corretos foram parar na fila como `PROCESSING_FAILED`. A correção foi bloquear estoque e crédito numa ordem estável e tratar deadlock como falha transitória com retentativa (RN-11, RN-12), commit `2f2ef7b`. Deixei a execução 1 no repositório de propósito: ela é a evidência de que a medição achou um defeito.
 
+**As outras 4 divergências da execução 1.** Das 9 decisões diferentes do rótulo, 5 são os `PROCESSING_FAILED` do deadlock. As outras 4 terminaram em `UNKNOWN_SKU` (3 pedidos em texto livre que deviam ser registrados e 1 com prazo no passado que devia dar `INVALID_DEADLINE`; lista em `medicao-resultados-run1.json`). O mesmo commit `2f2ef7b` corrigiu o extrator: uma saudação na mesma linha do pedido ("Bom dia, preciso de …") descartava a linha inteira. Os totais fecham com isso: `REGISTERED` sobe de 325 para 333 (5 do deadlock mais 3 do extrator), `UNKNOWN_SKU` cai de 38 para 34 e `INVALID_DEADLINE` sobe de 6 para 7. O repositório não guarda a análise caso a caso; a correspondência vem da mensagem do commit, do diff de `src/lib/extraction/rules.ts` e dessas contagens.
+
 **Desfechos da execução final (500 mensagens):** 333 registradas direto; 41 duplicatas ignoradas; 126 pedidos revisados por pessoa entre 459 criados; as exceções por motivo estão em `medicao-resultados.json`.
 
 ### Limites da medição

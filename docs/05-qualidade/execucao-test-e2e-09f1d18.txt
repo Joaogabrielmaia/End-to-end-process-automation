@@ -1,0 +1,21 @@
+# testes ponta a ponta
+# data: 2026-10-24T18:18:02Z
+# commit: 09f1d18cd23e2e2a206b4d964e7dc977e3a2d8c8
+# node: v24.14.0
+# comando: npm run test:e2e
+
+
+> fluxo-automacao-pedidos@1.0.0 test:e2e
+> playwright test
+
+
+Running 5 tests using 1 worker
+
+  ✓  1 tests\e2e\flow.spec.ts:16:5 › fluxo completo: registrado, exceção, duplicata, correção e reprocessamento (2.2s)
+  ✓  2 tests\e2e\flow.spec.ts:86:5 › aprovação de crédito exige justificativa (787ms)
+  ✓  3 tests\e2e\flow.spec.ts:105:5 › endpoint de entrada exige chave e valida o formato (32ms)
+  ✓  4 tests\e2e\flow.spec.ts:112:5 › layout móvel sem rolagem horizontal (555ms)
+  ✓  5 tests\e2e\flow.spec.ts:121:5 › exportação CSV traz cabeçalho e linhas (23ms)
+
+  5 passed (7.9s)
+exit: 0
