@@ -115,10 +115,6 @@ Cada regra tem origem, história, implementação e teste. Trecho da [matriz com
 - **Dados:** oito tabelas, UNIQUE por Message-ID, CHECK de estoque e crédito, transação no registro ([ER e dicionário](docs/ciclo-de-vida/05-modelo-de-dados.md)).
 - **Configuração:** Conventional Commits com IDs de requisito, PRs com merge commit, sem tags e sem workflow de CI; as verificações são locais e arquivadas ([configuração](docs/ciclo-de-vida/06-desenvolvimento-e-configuracao.md)).
 
-### Implantação, operação e adoção
-
-O código roda localmente; instruções em [`CONTRIBUTING.md`](CONTRIBUTING.md). Nada foi implantado em ambiente de operação. O [plano](docs/ciclo-de-vida/08-implantacao-e-operacao.md) descreve piloto em modo sombra, rollback e indicadores de adoção, separados do que existe.
-
 ## Competência → evidência
 
 | O que o projeto exercita | Onde está a prova |
@@ -184,7 +180,7 @@ Ganho de tempo, só como estimativa: no cenário base (80 pedidos por dia, 22 di
 | [Sprints](docs/ciclo-de-vida/sprints/README.md) · [Reuniões](docs/ciclo-de-vida/reunioes/README.md) · [Diagramas](docs/ciclo-de-vida/diagramas/README.md) | Planejamento, atas e catálogo de diagramas |
 | [Índice da série](docs/INDEX.md) | Seis episódios e trilhas de leitura de 2, 10 e 30 minutos |
 | [Galeria de telas](docs/screenshots/README.md) · [Glossário](docs/GLOSSARIO.md) | Capturas legendadas e termos |
-| [CHANGELOG](CHANGELOG.md) · [CONTRIBUTING](CONTRIBUTING.md) | Mudanças e instruções de execução |
+| [CHANGELOG](CHANGELOG.md) | Mudanças |
 
 ## Nota de contexto acadêmico
 
