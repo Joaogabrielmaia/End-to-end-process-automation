@@ -192,10 +192,4 @@ MIT, em [`LICENSE`](LICENSE).
 
 ## Nota de contexto acadêmico
 
-Este repositório é um estudo de caso acadêmico. A Distribuidora Santa Clara, as pessoas e os dados são fictícios.
-
-Os registros de planejamento são artefatos do cenário: o kickoff e as três reuniões de discovery, as janelas e as cerimônias das sprints, a RACI, o plano de implantação e o roadmap. Não são registros contemporâneos de uma operação real, e as datas das sprints não correspondem a datas de commit; os commits reais estão em 23 e 24/10/2026. Os tempos do processo atual vêm de um personagem simulado, e a taxa de revisão da carga descreve o gerador de pedidos do próprio projeto.
-
-Os resultados de testes, de carga e de build são execuções reais, com data, commit e log arquivado. As estimativas de ganho de tempo são hipóteses com fórmula e entradas visíveis.
-
-Uso de IA: um assistente de IA participou da construção do cenário (as reuniões de discovery foram simuladas com ele no papel dos entrevistados), da redação da documentação e da implementação do código e dos testes. Os commits trazem o trailer `Co-Authored-By` correspondente.
+Este repositório é um estudo de caso. A Rota Fácil Software, as pessoas, os clientes e os dados são fictícios. Reuniões, atas, o cronograma das sprints e as cerimônias foram elaborados para compor o cenário de aprendizagem, com participantes identificados por papel; Houve uso de IA generativa (Claude, da Anthropic) na construção do cenário, incluindo a simulação das reuniões, e como apoio ao desenvolvimento e à documentação. O modelo do cenário, as decisões de escopo e de arquitetura e a verificação dos resultados foram definidos e conferidos pelo autor. Os resultados de testes e de CI citados vêm de execuções registradas e não são resultados ilustrativos.
