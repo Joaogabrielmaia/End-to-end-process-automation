@@ -34,5 +34,12 @@ Termos e siglas usados na série, em linguagem de negócio, com link para onde a
 | LLM | Modelo de linguagem; opcional na extração e não executado | [ADR-004](03-arquitetura/ADRs.md#adr-004--extração-por-regra-ou-por-llm) |
 | E2E | Teste ponta a ponta, feito no navegador | [Resultados de testes](05-qualidade/01-resultados-de-testes.md) |
 | CNPJ | Registro de empresa; os do caso são fictícios | [Sobre este caso](00-sobre-este-caso/README.md) |
+| Sprint / Product Backlog | Ciclo curto de entrega no Scrum / lista priorizada do que construir | [Planejamento e Scrum](ciclo-de-vida/02-planejamento-e-scrum.md) |
+| DoR / DoD | Critérios para uma história poder entrar na sprint / para ser considerada pronta | [Sprints](ciclo-de-vida/sprints/README.md#definition-of-ready) |
+| RACI | Quem executa, responde, é consultado e é informado em cada atividade | [Visão e discovery](ciclo-de-vida/01-visao-e-discovery.md) |
+| C4 | Forma de desenhar arquitetura em níveis: contexto, contêineres e componentes | [Arquitetura](ciclo-de-vida/04-arquitetura-e-adrs.md) |
+| ER | Diagrama de entidades e relacionamentos do banco | [Modelo de dados](ciclo-de-vida/05-modelo-de-dados.md) |
+| Rollout / rollback | Entrada gradual em operação / volta ao estado anterior | [Implantação e operação](ciclo-de-vida/08-implantacao-e-operacao.md) |
+| Causa raiz / regressão | Origem de um defeito / teste que impede o defeito de voltar | [Testes e qualidade](ciclo-de-vida/07-testes-e-qualidade.md) |
 
 ← [Índice](INDEX.md)
