@@ -186,10 +186,12 @@ Ganho de tempo, só como estimativa: no cenário base (80 pedidos por dia, 22 di
 | [Galeria de telas](docs/screenshots/README.md) · [Glossário](docs/GLOSSARIO.md) | Capturas legendadas e termos |
 | [CHANGELOG](CHANGELOG.md) · [CONTRIBUTING](CONTRIBUTING.md) | Mudanças e instruções de execução |
 
-## Licença
-
-MIT, em [`LICENSE`](LICENSE).
-
 ## Nota de contexto acadêmico
 
-Este repositório é um estudo de caso. A Rota Fácil Software, as pessoas, os clientes e os dados são fictícios. Reuniões, atas, o cronograma das sprints e as cerimônias foram elaborados para compor o cenário de aprendizagem, com participantes identificados por papel; Houve uso de IA generativa (Claude, da Anthropic) na construção do cenário, incluindo a simulação das reuniões, e como apoio ao desenvolvimento e à documentação. O modelo do cenário, as decisões de escopo e de arquitetura e a verificação dos resultados foram definidos e conferidos pelo autor. Os resultados de testes e de CI citados vêm de execuções registradas e não são resultados ilustrativos.
+Este projeto é um estudo de caso acadêmico, com dados, empresas e atividades de gestão simulados.
+
+A IA generativa (Claude, da Anthropic) foi utilizada como apoio ao desenvolvimento e à documentação. As decisões e os resultados foram revisados pelo autor, e os testes citados seguem as evidências registradas.
+
+## Licença
+
+[MIT](LICENSE).
