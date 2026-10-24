@@ -1,0 +1,26 @@
+# testes unitários e integração
+# data: 2026-10-24T03:53:50Z
+# commit: 0afe5f7d07858a931856db356e6653e7ca8b8b53
+# node: v24.14.0
+# comando: npm test
+
+
+> fluxo-automacao-pedidos@1.0.0 test
+> vitest run
+
+[33m(!) Your Vite config uses features that are unsupported by `configLoader: 'native'`, which is planned to become the default in a future major version of Vite:
+  - ESM syntax in a file loaded as CommonJS (vitest.config.ts:1:1). Use a `.mjs` extension or set `"type": "module"` in the closest package.json
+Set `VITE_CONFIG_NATIVE_IGNORE_WARNING=true` to suppress this warning.[39m
+
+ RUN  v5.0.5 C:/Users/Joaog/Downloads/End-to-end-process-automation
+
+
+ Test Files  8 passed (8)
+      Tests  76 passed (76)
+   Start at  00:53:52
+   Duration  9.34s (tests 80%, import 15%, transform 3%, worker 1%, setup 1%)
+
+    Isolate  8 workers spawned · ~237ms startup each (spawn + environment, per file)
+             at least ~1.66s faster with isolate: false — reuses workers across files instead of one per file
+
+exit: 0
