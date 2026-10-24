@@ -2,8 +2,6 @@
 
 Capturas do app rodando local, em 1280 px de largura, na ordem do fluxo. Os dados são de demonstração, gerados pelo gerador do produto (`/generator`, lote de 60 e-mails, semente 11), sobre o banco local com o cadastro de exemplo. A taxa de revisão do painel vem dessa mistura de cenários.
 
-Para refazer as imagens: `npm run build`, `npm run start` e `npm run screenshots` (script em [`scripts/screenshots.spec.ts`](../../scripts/screenshots.spec.ts)).
-
 Não há captura do Power BI: não existe relatório.
 
 O GIF [`demo-excecao.gif`](demo-excecao.gif) (16 s) mostra um fluxo real: o lote é gerado pelo gerador, um pedido com SKU inexistente cai na fila de exceções, o SKU é corrigido e o pedido é reprocessado e registrado. Gravado com Playwright e convertido com ffmpeg, sem edição.

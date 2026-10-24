@@ -41,6 +41,6 @@ Galeria de telas: [`screenshots/README.md`](screenshots/README.md).
 1. Os nove itens de 10 minutos
 2. [Rastreabilidade](02-definicao/06-rastreabilidade.md)
 3. [Processo futuro (TO-BE)](02-definicao/07-processo-to-be.md)
-4. [n8n: como rodar](04-processo/n8n-como-rodar.md)
+4. [n8n: fluxo de recebimento](04-processo/n8n-como-rodar.md)
 5. [Resultados de testes](05-qualidade/01-resultados-de-testes.md)
 6. [Exportação CSV para Power BI](06-pos-lancamento/power-bi.md)
