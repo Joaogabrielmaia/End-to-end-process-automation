@@ -1,6 +1,6 @@
-# 04 · Reunião 2 — Quem lança os pedidos
+# 04 · Reunião 2 · Quem lança os pedidos
 
-> Simulação: o Claude interpretou o cliente nesta conversa.
+> Reunião simulada; pessoas e empresa fictícias.
 
 - **Participantes (fictícios):** Ricardo Teixeira (assistente de vendas, lança pedidos há 4 anos) e eu (João).
 - **Objetivo:** entender o trabalho real, os tempos e as exceções.

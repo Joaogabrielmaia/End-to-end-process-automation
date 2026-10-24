@@ -1,0 +1,23 @@
+# testes unitários e integração
+# data: 2026-10-24T13:21:30Z
+# commit: 522bdc7769a32c469982154872bd4961f374a51c
+# node: v24.14.0
+# comando: npm test
+
+
+> fluxo-automacao-pedidos@1.0.0 test
+> vitest run
+
+
+ RUN  v5.0.5 C:/Users/Joaog/Downloads/End-to-end-process-automation
+
+
+ Test Files  8 passed (8)
+      Tests  76 passed (76)
+   Start at  10:21:33
+   Duration  11.44s (tests 85%, import 11%, transform 2%, setup 1%, worker 1%)
+
+    Isolate  8 workers spawned · ~260ms startup each (spawn + environment, per file)
+             at least ~1.82s faster with isolate: false — reuses workers across files instead of one per file
+
+exit: 0

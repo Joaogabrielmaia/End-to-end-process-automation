@@ -1,11 +1,11 @@
 # Exportação CSV para Power BI (RF-15, HU-13)
 
-> Estudo fictício. Esta página documenta os arquivos que o sistema gera. **Não existe relatório de Power BI neste repositório**: `docs/screenshots/powerbi` está vazia e nada aqui afirma o contrário.
+> Estudo fictício. Esta página documenta os arquivos que o sistema gera. **Não existe relatório de Power BI neste repositório**; só os seis CSVs.
 
 ## Como obter
 
 - Pelo app: `GET /api/export/<nome>.csv` (por exemplo `http://localhost:3100/api/export/orders.csv`).
-- Pelo terminal: `npm run export:csv`.
+- Pelo terminal, com o app rodando: `curl -o orders.csv http://localhost:3100/api/export/orders.csv`. Os nomes aceitos são `orders`, `order_items`, `exceptions`, `audit_events`, `customers` e `products` (`src/lib/export.ts`).
 
 Codificação UTF-8 com BOM (para o Excel e o Power BI lerem os acentos), separador vírgula, quebra de linha `\r\n`. Datas em ISO 8601 (UTC). Células com vírgula, aspas, ponto e vírgula ou quebra de linha vêm entre aspas.
 

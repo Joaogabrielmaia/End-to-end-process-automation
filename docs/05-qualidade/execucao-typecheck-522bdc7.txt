@@ -1,0 +1,11 @@
+# typecheck
+# data: 2026-10-24T13:20:11Z
+# commit: 522bdc7769a32c469982154872bd4961f374a51c
+# node: v24.14.0
+# comando: npm run typecheck
+
+
+> fluxo-automacao-pedidos@1.0.0 typecheck
+> tsc --noEmit
+
+exit: 0

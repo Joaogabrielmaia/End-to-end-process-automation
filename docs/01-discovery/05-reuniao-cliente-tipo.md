@@ -1,6 +1,6 @@
-# 05 · Reunião 3 — Cliente-tipo
+# 05 · Reunião 3 · Cliente-tipo
 
-> Simulação: o Claude interpretou o cliente nesta conversa.
+> Reunião simulada; pessoas e empresa fictícias.
 
 - **Participantes (fictícios):** Antônio Pinheiro (dono da Elétrica Pinheiro Ltda, instalador, compra quase toda semana) e eu (João).
 - **Objetivo:** entender a perspectiva de quem manda os pedidos.

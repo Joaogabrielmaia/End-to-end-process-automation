@@ -1,6 +1,6 @@
 # 02 · O negócio: o dia de quem lança pedidos
 
-> Simulação: o Claude interpretou o cliente nesta conversa.
+> Reunião simulada; pessoas e empresa fictícias.
 > Tudo o que está aqui é fictício e foi construído por mim para o estudo.
 
 ## A empresa
