@@ -33,7 +33,6 @@ A "Distribuidora Santa Clara" é uma distribuidora de materiais elétricos com 1
 | Ganho de tempo | Estimativa, com fórmula e entradas visíveis em [`relatorio-de-medicao.md`](../04-processo/relatorio-de-medicao.md) |
 | Testes e carga | Execuções reais, com data e commit em [`05-qualidade`](../05-qualidade/) e [`04-processo`](../04-processo/relatorio-de-medicao.md) |
 
-Tudo roda local, com Docker Compose. Não há hospedagem nem link de demonstração.
 
 ## Como ler a documentação
 

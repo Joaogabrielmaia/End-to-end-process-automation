@@ -8,7 +8,7 @@ As duas execuções ficaram no repositório. O relatório separa o que foi medid
 
 | Documento | O que contém | Itens |
 |---|---|---|
-| [n8n: como rodar](n8n-como-rodar.md) | Passo a passo, armadilha da versão 2.44.6 e decisão sobre o alerta | 1 fluxo, 3 cenários testados |
+| [n8n: fluxo de recebimento](n8n-como-rodar.md) | Fluxo, armadilha da versão 2.44.6 e decisão sobre o alerta | 1 fluxo, 3 cenários testados |
 | [Relatório de medição](relatorio-de-medicao.md) | Carga de 500 mensagens, o deadlock e a estimativa de ganho | 2 execuções |
 | [`medicao-resultados-run1.json`](medicao-resultados-run1.json) | Dados brutos da primeira execução, com o defeito | 500 mensagens |
 | [`medicao-resultados.json`](medicao-resultados.json) | Dados brutos da execução final | 500 mensagens |
